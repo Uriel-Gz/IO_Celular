@@ -16,6 +16,10 @@ class Bacterium:
         self.__state = state
         self.__moves = 0
 
+    def __init__(self, state:Type_Bacterium, moves:int):
+        self.__state = state
+        self.__moves = moves
+
     @property
     def _state(self):
         return self.__state
@@ -54,7 +58,7 @@ class Bacterium:
         if self.__state == Type_Bacterium.INFECTADA or self.__state == Type_Bacterium.DEBIL:
             return ValueError
         self.__moves = 0
-        return Bacterium(self)
+        return Bacterium(self.__state)
         
     def explotar(self):
         del self

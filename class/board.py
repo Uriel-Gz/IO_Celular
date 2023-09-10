@@ -12,8 +12,11 @@ class Mescolanza:
 	def get_bacterias(self):
 		return self.bacterias
 
-	def set_bacterias(self, value:Type_Bacterium):
-		self.bacteriasvalue = value
+	def set_bacterias(self, state:Type_Bacterium):
+		self.bacterias.append([Bacterium(state)])
+
+	def set_bacterias(self, state:Type_Bacterium, moves:int):
+		self.bacterias.append([Bacterium(state, moves)])
 
 	def get_cant_antibiotic(self):
 		return self.cant_antibiotic
@@ -29,8 +32,8 @@ class Mescolanza:
  
 class Board:
 
-	def	 __init__(self, r, c):
-		self.board = Mescolanza[r][c]
+	def	 __init__(self, rows, columns):
+		self.board = Mescolanza[rows][columns]
 		self.position_spawn_other = (0,0)
 		self.position_spawn_bacterium = (0,0)
 		self.cantBacterias = 0
@@ -99,6 +102,14 @@ class Board:
 
 	def set_Antibiotico(self, xCelda:int, yCelda:int, cantidad:int):
 		self.board[xCelda][yCelda].set_cant_antibiotic(cantidad)
+
+	def add_Bacteria(self, xCelda:int, yCelda:int, state:Type_Bacterium, moves:int):
+		self.board[xCelda][yCelda].set_bacterias(state, moves)
+		self.cantBacterias += 1
+
+	def add_Antibiotico(self, xCelda:int, yCelda:int, cant:int):
+		self.board[xCelda][yCelda].cant_antibiotic += 1
+		self.cantAntibioticos += 1
   
 	def set_Bacteriofago(self, xCelda:int, yCelda:int, poderInfeccion:int):
 		self.board[xCelda][yCelda].set_virus(poderInfeccion)
