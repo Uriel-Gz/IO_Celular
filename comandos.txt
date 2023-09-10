@@ -1,0 +1,61 @@
+RAMAS DE GITHUB
+
+> Para crear la rama:
+	git branch (nombre de la rama sin los parentesis)
+
+> Para cambiar a la rama que creamos
+	git checkout (nombre de la rama)
+
+> Luego de modificar hacemos el "git add ." y el 'git commit -m ""' normal.
+
+> git push origin (nombre de la rama), pusheamos para que asi aparezca el pull request en git.
+
+> Una vez que todos aceptemos el pull, podremos hacer el marge con la MASTER.
+
+
+
+> Ejecutar aplicacion Flask. Desde la carpeta donde esta la aplicación
+
+	python3 -m venv venv				# Crea un entorno virtual de Python en un directorio llamado venv en el directorio actual
+	. venv/bin/activate 				# ejecuta el script 'activate' en el entorno virtual
+	pip install Flask 					# instalar el paquete Flask
+	flask --app <nombre de la app> run	# ejemplo flask --app hello run
+	deactivate  						# para salir del entorno virtual
+
+
+Luego simplemente hacer 
+
+	. venv/bin/activate
+	flask --app <nombre de la app> run
+	deactivate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+python -m venv venv:
+
+    python: Inicia el intérprete de Python.
+    -m venv: Utiliza el módulo venv de Python para crear un entorno virtual.
+    .venv: Es el nombre del directorio donde se creará el entorno virtual (puedes usar otro nombre si lo deseas).
+
+Esta línea de comando crea un entorno virtual de Python en un directorio llamado .venv en el directorio actual. Un entorno virtual es una forma de aislar las dependencias de Python para un proyecto específico, lo que permite tener versiones diferentes de paquetes y bibliotecas en diferentes proyectos sin conflictos.
+'''
