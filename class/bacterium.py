@@ -52,7 +52,12 @@ class Bacterium:
         self.__state = Type_Bacterium.DEBIL
         self.__moves = 0
 
+    def recuperar(self):
+        self.__state = Type_Bacterium.FUERTE
+        self.__moves = 0
 
+    def add_move(self):
+        self.__moves += 1
 
     def reproducir(self):
         if self.__state == Type_Bacterium.INFECTADA or self.__state == Type_Bacterium.DEBIL:
