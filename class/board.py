@@ -146,6 +146,7 @@ class Board:
 		#una vez aplicadas todas las reglas de cruzamiento, le resto un movimiento a todo lo que quedo
 		self.count_move(x,y)
 
+
 	#para que este metodo quede bien implementado hace falta una funcion
 	#que devuelva una posicion vecina random
 	def mover_a_vecinos(self, x, y, new_board):
@@ -227,6 +228,7 @@ class Board:
 
 		#agrego a la lista original, las bacterias que provienen de la reproduccion
 		self.board[x][y].bacterias.extend(new_bacterias)
+		self.cantBacterias += new_bacterias.__len__
 
 		#le sumo 1 a todas las bacterias, sería como contar el proximo paso
 		for bacteria in self.board[x][y].bacterias:
