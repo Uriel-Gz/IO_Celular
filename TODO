@@ -1,0 +1,59 @@
+% si hago una tabla sin el examples, los valores los deberia obtener y pasarlos a algun lugar
+
+TODO:
+     funcion que devuelva el numero de bacterias en el tablero 
+     funcion que devuelva el numero de bacterias en una celda
+     funcion que devuelva el numero de antibioticos en el tablero
+     funcion que devuelva el numero de antibioticos en una celda
+     funcion que devuelva el numero de bacteriofagos en el tablero
+     funcion que devuelva el numero de bacteriofagos en una celda
+     funcion que devuelva la posicion de Spawn A en el tablero
+     funcion que devuelva la posicion de Spawn Bc en el tablero
+     funcion que devuelva la posicion de Spawn Bf en el tablero
+     funcion que hubique una bacteria en una posicion determinada
+     funcion que hubique un bacteriofago en una posicion determinada
+     funcion que hubique un antibiotico en una posicion determinada
+     funcion que devuelva un tablero de 6x6
+     funcion que devuelva true si la posicion a acceder es valida
+     funcion que cambie el grado de infeccion por cada paso
+     funcion que cambie el numero pasos de un bacteriofago para desaparecer
+     funcion que verifique el valor ingresado al campo cantidad, frecuencia o posicion Spawn
+     
+     (op) pantalla de inicio con una imagen del juego
+
+
+
+x spawn bacteria
+y spawn antibiotico
+z spawn bacteriofago
+
+b bacteria normal
+d bacteria debil
+f bacteria fuerte
+i bacteria infectada
+
+a antibiotico
+v bacteriofago
+
+````
+Recopilar información sobre proyectos que usen flask
+Recopilación de información sobre React
+
+Definir escenarios representativos para colisiones 
+Definir escenarios representativos para movimientos de bacterias
+Definir escenarios representativos para movimientos de antibioticos
+Definir escenarios representativos para movimientos de bacteriofagos
+Definir escenarios representativos para reprodución de bacterias
+Definir escenarios representativos para reprodución de bacteriofagos
+Definir escenarios representativos para configuraciones iniciales
+Definir metodos auxiliares para testeo de escenarios
+
+Implementar escenarios representativos para colisiones 
+Implementar escenarios representativos para movimientos de bacterias
+Implementar escenarios representativos para movimientos de antibioticos
+Implementar escenarios representativos para movimientos de bacteriofagos
+Implementar escenarios representativos para reprodución de bacterias
+Implementar escenarios representativos para reprodución de bacteriofagos
+Implementar escenarios representativos para configuraciones iniciales
+Implementar metodos auxiliares para testeo de escenarios
+````
