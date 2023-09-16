@@ -3,10 +3,11 @@
 Característica: Comportamiento de las entidades
 #10
   Escenario: Una bacteria normal o fuerte se reproduce
-    Dado que hay una bacteria <type-s> en la posicion <pos>
-    Y ya se movio 3 veces
-    Cuando la bacteria <type-s> se mueve a la celda <end>
-    Entonces el tablero deberia quedar con bacterias <type-p> en <end> y en <end2>
+    Dado que hay 1 bacteria <type-s> con 3 movimientos en la celda <pos>
+    Cuando se mueve 1 bacteria <type-s> de <pos> a <end>
+    #Entonces el tablero deberia quedar con bacterias <type-p> en <end> y en <end2>
+    #Alternativa
+    Entonces el tablero en total tiene 2 bacterias
 
     Ejemplos:
       |pos   |end   |end2  |type-s | type-p |
@@ -19,10 +20,11 @@ Característica: Comportamiento de las entidades
 
 #11
   Escenario: La bacteria normal se reproduce con una mutación y produce una bacteria fuerte
-     Dado que hay una bacteria en la posicion <pos>
-    Y ya se movio 3 veces
-    Cuando las bacteria se mueve a la celda <end>
+    Dado que hay 1 bacteria con 3 movimientos en la celda <pos>
+    Cuando se mueve 1 bacteria de <pos> a <end>
+    #Preguntar esto, dificil de codear en el juego
     Y por 1% de probabilidad sufre una mutacion
+    #Ver que pregunto aca también
     Entonces el tablero deberia quedar con bacterias en <end> y en <end2>
 
     Ejemplos:
@@ -33,12 +35,11 @@ Característica: Comportamiento de las entidades
 
 #12
 #13
-Escenario: Una bacteria debiles no se reproduce
-    Dado que hay una bacteria debilitada en la posicion <pos>
-    Y ya se movio 3 veces
-    Cuando la bacteria debilitada se mueva a la celda <end>
-    Entonces el tablero deberia quedar con una bacteria debilitada en <end>
-    Y las posiciones adyacetes deberian estar libres
+Escenario: Una bacteria debil no se reproduce
+    Dado que hay 1 bacteria debil con 3 movimientos en la celda <pos>
+    Cuando se mueve 1 bacteria debil de <pos> a <end>
+    Entonces el tablero tiene 1 bacteria debil en <end>
+    Y el tablero no tiene bacterias en <pos>
 
     Ejemplos:
       |pos   |end   |
@@ -51,10 +52,16 @@ Escenario: Una bacteria debiles no se reproduce
 
 #14 Ver escritura y ver que pasa con las variantes de tiempo para permane
 Escenario: Se produce sobrepoblacion de bacterias y sobrevive la más apta
-    Dado que hay una bacteria <type-s> en la posicion <pos>
-    Y 3 bacterias <type-p> en  <pos1>, <pos2> y <pos3>
-    Cuando todas la bacterias se mueven a la celda <end>
-    Entonces solo deberia permanecer la bacteria <type-s>
+    Dado que hay 1 bacteria <type-s> en la celda <pos>
+    Y 1 bacterias <type-p> en la celda <pos1>
+    Y 1 bacterias <type-p> en la celda <pos2>
+    Y 1 bacterias <type-p> en la celda <pos3>
+    Cuando se mueve 1 bacteria <type-s> de <pos> a <end>
+    Y se mueve 1 bacteria <type-p> de <pos1> a <end>
+    Y se mueve 1 bacteria <type-p> de <pos2> a <end>
+    Y se mueve 1 bacteria <type-p> de <pos3> a <end>
+    Entonces el tablero tiene 1 bacteria <type-s> en <end>
+    Y el tablero no tiene bacterias <type-p>es en <end>
 
     Ejemplos:
       |pos   |pos1  |pos2  |pos3  |end   |type-s | type-p |
@@ -64,15 +71,11 @@ Escenario: Se produce sobrepoblacion de bacterias y sobrevive la más apta
       |(21,7)|(21,9)|(23,7)|(23,9)|(22,8)|normal |normales|
       |(11,7)|(11,9)|(13,7)|(13,9)|(12,8)|debil  |debiles |
 
-
 #15
-#16
-#17
   Escenario: Bacterias se vuelven fuertes despues de un tiempo
-    Dado que hay una bacteria debil en la posicion <pos>
-    Y la bacteria ya se movio 5 veces
-    Cuando la bacteria debil se mueve a la celda <end>
-    Entonces el tablero deberia contener una bacteria fuerte en <end>
+    Dado que hay 1 bacteria debil con 5 movimientos en la celda <pos>
+    Cuando se mueve 1 bacteria debil de <pos> a <end>
+    Entonces el tablero tiene 1 bacteria fuerte en <end>
 
     Ejemplos:
       |pos   |end   |

@@ -3,10 +3,11 @@
 Característica: Movimientos de una entidad                                                                          
 #1
 Esquema del escenario: Un ente se mueve de posicion a un casillero contiguo              
-    Dado que el estado del juego tiene un <ente> en <x>
+    Dado que hay 1 <ente> en la celda <x>
     Y tiene 8 posibilidades de movimiento <a>, <b>, <c>, <d>, <e>, <f>, <g> y <h>
-    Cuando se mueve a la celda <d>
-    Entonces el tablero deberia albergar un <ente> en <d>
+    Cuando se mueve 1 <ente> de la celda <x> a <d> 
+    Entonces el tablero tiene 1 <ente> en <d> 
+    Y el tablero no tiene <ente>s en <x>
 
     Ejemplos:      
       |ente         |a    |b    |c    |d    |e    |f    |g    |h    |x    |
@@ -16,10 +17,12 @@ Esquema del escenario: Un ente se mueve de posicion a un casillero contiguo
 
 #2
 Esquema del escenario: Un ente se mueve de algun borde a un casillero valido
-    Dado que hay 1 <ente> en la posicion <x>
+    Dado que hay 1 <ente> en la celda <x>
     Y tiene 5 posibilidades de movimiento <a>, <b>, <c>, <d> y <e>
-    Cuando se mueva a algun vecino, se moverá a una posicion valida, en este caso <d>
-    Entonces su nueva posicion será <d>, con lo cual permanecera en los limites del tablero
+    Cuando se mueve 1 <ente> de la celda <x> a <d>
+    Entonces el tablero tiene 1 <ente> en <d>
+    Y el tablero no tiene <ente>s en <x>
+
 # en caso de los bateriofagos, usaremos poder de infeccion dentro del test
     Ejemplos:
       |ente         |modo         |x    |a    |b    |c    |d    |e    |pwr|res|
@@ -29,10 +32,11 @@ Esquema del escenario: Un ente se mueve de algun borde a un casillero valido
 
 #3
 Esquema del escenario: Un ente se mueve de una esquina a un casillero valido
-    Dado que hay 1 <ente> en la posicion <a>
+    Dado que hay 1 <ente> en la celda <a>
     Y tiene 3 posibilidades de movimiento <b>, <c> y <d>
-    Cuando se mueva a un casillero aleatorio, se moverá a una posicion valida, en este caso <d>
-    Entonces su nueva posicion será <d>, permaneciendo asi en los limites del tablero
+    Cuando se mueve 1 <ente> de la celda <a> a <d>
+    Entonces el tablero tiene 1 <ente> en <d>
+    Y el tablero no tiene <ente>s en <a>
 
     Ejemplos:      
       |ente         |a      |b      |c      |d      |
@@ -52,10 +56,12 @@ Esquema del escenario: Un ente se mueve de una esquina a un casillero valido
 #4
 Esquema del escenario: Las entidades no interactuan entre si
     Dado que hay 1 <ente> en la celda <a>
-    Y hay 1 <ente> en la celda <b>
-    Y hay 1 <ente> en la celda <c>
-    Cuando se mueven a la celdad <d>
-    Entonces hay tres <ente>s en la celda <d>
+    Y que hay 1 <ente> en la celda <b>
+    Y que hay 1 <ente> en la celda <c>
+    Cuando se mueve 1 <ente> de la celda <a> a <d>
+    Y se mueve 1 <ente> de la celda <b> a <d>
+    Y se mueve 1 <ente> de la celda <c> a <d>
+    Entonces el tablero tiene 3 <ente>s en <d>
 
     Ejemplos:
       |ente         |a    |b    |c    |d    |

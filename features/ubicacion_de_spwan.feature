@@ -1,6 +1,6 @@
 
 
-Feature: Se hubican los spawns de las entidades
+Feature: Se ubican los spawns de las entidades
 
   Scenario Outline: Se ubica un spawn
     Given que el usuario ingreso al modo de juego de <modo>
