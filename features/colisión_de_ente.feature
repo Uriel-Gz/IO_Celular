@@ -5,10 +5,11 @@ Característica: Colisión de entidades
 # Bacterias y antibioticos
 #9
 Escenario: Los antibioticos desaparecen al tener contacto con cualquier tipo de bacteria
-    Dado que hay un antibiotico en <apos>
-    Y una bacteria <tipo> en <bpos>
-    Cuando ambos de mueven a la posicion <crash>
-    Entonces el antibiotico desaparece
+    Dado que hay 1 antibiotico en la celda <apos>
+    Y que hay 1 bacteria <tipo> en la celda <bpos>
+    Cuando se mueve 1 antibiotico de <apos> a <crash>
+    Y se mueve 1 bacteria <tipo> de <apos> a <crash>
+    Entonces el tablero no tiene antibioticos en <crash>
 
     Ejemplos:
     |apos  |bpos  |tipo  |crash |
@@ -18,11 +19,12 @@ Escenario: Los antibioticos desaparecen al tener contacto con cualquier tipo de 
 
 #10
 Escenario: Una bacteria que no sea fuerte muere al encontrarse con un antibiótico
-    Dado que hay un antibiotico en la celda <apos>
-    Y hay bacteria <tipo> en la celda <bpos>
-    Cuando el antibiotico se mueve a la celda <crash>
-    Y la bacteria se mueve a la celda <crash>
-    Entonces el antibiotico desaparece y la bacteria muere
+    Dado que hay 1 antibiotico en la celda <apos>
+    Y que hay 1 bacteria <tipo> en la celda <bpos>
+    Cuando se mueve 1 antibiotico de <apos> a <crash>
+    Y se mueve 1 bacteria <tipo> de <bpos> a <crash>
+    Entonces el tablero no tiene antibioticos en <crash>
+    Y el tablero no tiene bacterias en <crash>
 
     Ejemplos:
     |apos  |bpos  |tipo  |crash |
@@ -30,13 +32,36 @@ Escenario: Una bacteria que no sea fuerte muere al encontrarse con un antibióti
     |(1,32)|(2,34)|normal|(1,33)|
   
 #11
-#12
+
 Escenario: Una bacteria fuerte se debilita al tener contacto con un antibiotico
-    Dado que hay un antibiotico en la celda <apos>
-    Y hay bacteria fuerte en la celda <bpos>
-    Cuando el antibiotico se mueve a la celda <crash>
-    Y la bacteria se mueve a la celda <crash>
-    Entonces el antibiotico desaparece y queda una bacteria debil
+    Dado que hay 1 antibiotico en la celda <apos>
+    Y que hay 1 bacteria fuerte en la celda <bpos>
+    Cuando se mueve 1 antibiotico de <apos> a <crash>
+    Y se mueve 1 bacteria de <bpos> a <crash>
+    Entonces el tablero no tiene antibioticos en <crash>
+    Y el tablero tiene 1 bacteria debil en <crash>
+
+    Ejemplos:
+    |apos   |bpos   |crash  |
+    |(3,2)  |(3,4)  |(3,3)  |
+    |(1,32) |(2,34) |(1,33) |
+    |(12,12)|(12,14)|(12,13)|
+    |(34,8) |(35,8) |(35,7) |
+    |(22,8) |(23,9) |(22,9) |
+
+
+#12
+Escenario: El numero de antibioticos es menor o igual al numero de bacterias en una celda
+    Dado que hay 1 antibiotico en la celda <apos>
+    Y que hay 1 bacteria normal en la celda <bpos>
+    Y que hay 1 bacteria debil en la celda <bpos>
+    Y que hay 1 bacteria fuerte en la celda <bpos>
+    Cuando se mueve 1 antibiotico de <apos> a <crash>
+    Y se mueve 1 bacteria normal de <bpos> a <crash>
+    Y se mueve 1 bacteria debil de <bpos> a <crash>
+    Y se mueve 1 bacteria fuerte de <bpos> a <crash>
+    Entonces el tablero tiene 1 bacteria debil en <crash>
+    Y el tablero no tiene antiobioticos en <crash>
 
     Ejemplos:
     |apos   |bpos   |crash  |
@@ -48,39 +73,23 @@ Escenario: Una bacteria fuerte se debilita al tener contacto con un antibiotico
 
 
 #13
-Escenario: El numero de antibioticos es menor o igual al numero de bacterias en una celda
-    Dado que hay una antibiotico en la celda <apos>
-    Y hay una bacteria normal en la celda <bpos>
-    Y hay una bacteria debil en la celda <bpos>
-    Y hay una bacteria fuerte en la celda <bpos>
-    Cuando el antibiotico se mueva a la celda <crash>
-    Y la bacteria normal se mueva a la celda <crash>
-    #podria acortarlo a una linea de bacterias
-    Y la bacteria debil se mueva a la celda <crash>
-    Y la bacteria fuerte se mueva a la celda <crash>
-    Entonces deberia quedar una bacteria debil en la celda <crash>
-
-    Ejemplos:
-    |apos   |bpos   |crash  |
-    |(3,2)  |(3,4)  |(3,3)  |
-    |(1,32) |(2,34) |(1,33) |
-    |(12,12)|(12,14)|(12,13)|
-    |(34,8) |(35,8) |(35,7) |
-    |(22,8) |(23,9) |(22,9) |
-
-
-#15
 Escenario: Las bacterias mueren cuando hay mas antibioticos que bacterias en la misma celda
-    Dado que hay un antibiotico en la celda <apos>
-    Y hay un antibiotico en la celda <apos2>
-    Y hay un antibiotico en la celda <apos3>
-    Y hay un antibiotico en la celda <apos4>
-    Y hay una bacteria normal en la celda <bpos>
-    Y hay una bacteria debil en la celda <bpos2>
-    Y hay una bacteria fuerte en la celda <bpos3>
-    Cuando los antibioticos se mueven a <crash>
-    Y las bacterias se mueven a <crash>
-    Entonces la celda <crash> queda vacia por sobredosis
+    Dado que hay 1 antibiotico en la celda <apos>
+    Y que hay 1 antibiotico en la celda <apos2>
+    Y que hay 1 antibiotico en la celda <apos3>
+    Y que hay 1 antibiotico en la celda <apos4>
+    Y que hay 1 bacteria normal en la celda <bpos>
+    Y que hay 1 bacteria debil en la celda <bpos2>
+    Y que hay 1 bacteria fuerte en la celda <bpos3>
+    Cuando se mueve 1 antibiotico de <apos> a <crash>
+    Y se mueve 1 antibiotico de <apos2> a <crash>
+    Y se mueve 1 antibiotico de <apos3> a <crash>
+    Y se mueve 1 antibiotico de <apos4> a <crash>
+    Y se mueve 1 bacteria normal de <bpos> a <crash>
+    Y se mueve 1 bacteria debil de <bpos2> a <crash>
+    Y se mueve 1 bacteria fuerte de <bpos3> a <crash>
+    Entonces el tablero no tiene antiobioticos en <crash>
+    Y el tablero no tiene bacterias en <crash>
 
     Ejemplos:
     |apos  |apos2 |apos3 |apos4 |bpos  |bpos2 |bpos3 |crash |
