@@ -112,13 +112,13 @@ Escenario: Las bacterias mueren cuando hay mas antibioticos que bacterias en la 
 # Bacterias y bacteriófagos    
 #22
 Escenario: Una bacteria se cruza con un bacteriófago                            
-    Dado que hay una bacteria <type> en la celda <bpos>
-    Y un bacteriofago en la celda <bfpos> con poder de infeccion <power> 
+    Dado que hay una bacteria <tipo> en la celda <bpos>
+    Y un bacteriofago en la celda <bfpos> con poder de infeccion <poder> 
     Cuando la bacteria y el bacteriofago se mueven a la posición <crash>
-    Entonces el tablero deberia contener una bacteria infectada de grado <grade>
+    Entonces el tablero deberia contener una bacteria infectada de grado <grado>
 
     Ejemplos:
-    |bfpos  |bpos   |crash  |power|grade|type  |
+    |bfpos  |bpos   |crash  |poder|grado|tipo  |
     |(3,2)  |(3,4)  |(3,3)  |4    |3    |normal|
     |(1,32) |(2,34) |(1,33) |3    |2    |normal|
     |(12,12)|(12,14)|(12,13)|2    |1    |normal|
@@ -129,46 +129,47 @@ Escenario: Una bacteria se cruza con un bacteriófago
 
 #23
 Escenario: Una bacteria infectada no le ocurre nada cuando se cruza con un bacteriófago
-    Dado que hay una bacteria infectada en la celda <bpos> con grado de infeccion <grade>
-    Y un bacteriofago en la celda <bfpos> con poder de infeccion <power> 
+    Dado que hay una bacteria infectada en la celda <bpos> con grado de infeccion <grado>
+    Y un bacteriofago en la celda <bfpos> con poder de infeccion <poder> 
     Cuando la bacteria y el bacteriofago se mueven a la celda <crash>
-    Entonces en el tablero queda un bacteria infectada con grado <gradeUp>
-    Y un bacteriófago con poder de infección <powerLess>
+    Entonces en el tablero queda un bacteria infectada con grado <gradoInc>
+    Y un bacteriófago con poder de infección <poderDec>
 
     Ejemplos:
-    |bfpos  |bpos   |crash  |power|powerLess|grade|gradeUp|
-    |(3,2)  |(3,4)  |(3,3)  |4    |3        |1    |2      |
-    |(1,32) |(2,34) |(1,33) |3    |2        |2    |3      |
-    |(12,12)|(12,14)|(12,13)|2    |1        |2    |3      |
+    |bfpos  |bpos   |crash  |poder|poderDec|grado|gradoInc|
+    |(3,2)  |(3,4)  |(3,3)  |4    |3        |1    |2       |
+    |(1,32) |(2,34) |(1,33) |3    |2        |2    |3       |
+    |(12,12)|(12,14)|(12,13)|2    |1        |2    |3       |
 
 #24
 Escenario: Una bacteria es infectada por dos bacteriófagos                                    
-    Dado que hay una bacteria <type> en la celda <bpos>
-    Y un bacteriofago en la celda <bfpos> con poder de infeccion <power>
-    Y un bacteriofago en la celda <bfpos2> con poder de infeccion <power2>
+    Dado que hay una bacteria <tipo> en la celda <bpos>
+    Y un bacteriofago en la celda <bfpos> con poder de infeccion <poder>
+    Y un bacteriofago en la celda <bfpos2> con poder de infeccion <poder2>
     Cuando la bacteria y los bacteriofagos se mueven a la posición <crash>
-    Entonces el tablero deberia contener una bacteria infectada de grado <grade>
+    Entonces el tablero deberia contener una bacteria infectada de grado <grado>
 
     Ejemplos:
-    |bfpos  |bfpos2 |bpos   |crash  |power|power2|grade|type  |
+    |bfpos  |bfpos2 |bpos   |crash  |poder|poder2|grado|tipo  |
     |(3,2)  |(4,3)  |(3,4)  |(3,3)  |3    |2     |3    |normal|
-    |(34,8) |(35,7) |(35,8) |(34,7) |4    |1     |3    |fuerte|
-    |(1,32) |(2,34) |(2,33) |(1,33) |2    |2     |2    |normal|
-    |(12,12)|(12,14)|(13,13)|(12,13)|1    |2     |1    |fuerte|
+    |(1,5)  |(2,4)  |(2,5)  |(1,4)  |4    |1     |3    |fuerte|
+    |(1,3)  |(2,5)  |(2,4)  |(1,4)  |2    |2     |2    |normal|
+    |(3,3)  |(3,5)  |(4,4)  |(3,4)  |1    |2     |1    |fuerte|
 
 
 #25
 Escenario: Sobrepoblación de bacterias se cruzan al mismo tiempo con un bacteriofago                
-    Dado que hay una bacteria <type> en la celda <bpos>
-    Y hay una bacteria <type> en la celda <bpos2>
-    Y hay una bacteria <type> en la celda <bpos3>
-    Y hay una bacteria <type> en la celda <bpos4>
-    Y un bacteriofago en la celda <bfpos> con poder de infeccion <power>
+    Dado que hay una bacteria <tipo> en la celda <bpos>
+    Y hay una bacteria <tipo> en la celda <bpos2>
+    Y hay una bacteria <tipo> en la celda <bpos3>
+    Y hay una bacteria <tipo> en la celda <bpos4>
+    Y un bacteriofago en la celda <bfpos> con poder de infeccion <poder>
     Cuando las bacteria y el bacteriofago se mueven a la posición <crash>
-    Entonces el tablero deberia contener una bacteria infectada de grado <grade>
+    Entonces el tablero deberia contener una bacteria infectada de grado <grado>
 
     Ejemplos:
-    |bfpos  |bpos  |bpos2  |bpos3 |bpos4  |crash  |power|grade|type  |
+    |bfpos  |bpos  |bpos2  |bpos3 |bpos4  |crash  |poder|grado|tipo  |
     |(3,2)  |(2,2) |(4,3)  |(2,4) |(3,4)  |(3,3)  |3    |2    |normal|
-    |(19,5) |(18,5)|(20,6) |(18,7)|(19,7) |(19,6) |2    |1    |fuerte|
-    |(10,20)|(9,20)|(11,21)|(9,22)|(10,22)|(10,21)|4    |3    |normal|
+    |(1,3)  |(0,3) |(2,4)  |(0,5) |(1,5)  |(1,4)  |2    |1    |fuerte|
+    |(4,0)  |(3,0) |(5,1)  |(3,2) |(4,2)  |(4,1)  |4    |3    |normal|
+

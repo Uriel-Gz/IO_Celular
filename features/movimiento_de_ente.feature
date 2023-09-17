@@ -26,9 +26,10 @@ Esquema del escenario: Un ente se mueve de algun borde a un casillero valido
 # en caso de los bateriofagos, usaremos poder de infeccion dentro del test
     Ejemplos:
       |ente         |modo         |x    |a    |b    |c    |d    |e    |pwr|res|
-      |bacteria     |antibioticos |(1,5)|(1,6)|(1,4)|(2,6)|(2,4)|(2,5)|   |   |
-      |antibiotico  |antibioticos |(1,5)|(1,6)|(1,4)|(2,6)|(2,4)|(2,5)|   |   |
-      |bacteriofago |antibioticos |(1,5)|(1,6)|(1,4)|(2,6)|(2,4)|(2,5)|3  |2  |
+      |bacteria     |antibioticos |(1,4)|(1,5)|(1,3)|(2,5)|(2,3)|(2,4)|   |   |
+      |antibiotico  |antibioticos |(1,4)|(1,5)|(1,3)|(2,5)|(2,3)|(2,4)|   |   |
+      |bacteriofago |antibioticos |(1,4)|(1,5)|(1,3)|(2,5)|(2,3)|(2,4)|3  |2  |
+
 
 #3
 Esquema del escenario: Un ente se mueve de una esquina a un casillero valido
@@ -40,17 +41,17 @@ Esquema del escenario: Un ente se mueve de una esquina a un casillero valido
 
     Ejemplos:      
       |ente         |a      |b      |c      |d      |
-      |bacterias    |(1,50) |(2,49) |(1,49) |(2,50) |
-      |bacterias    |(50,50)|(50,49)|(49,49)|(49,50)|
-      |bacterias    |(50,1) |(50,2) |(49,2) |(49,1) |
-      |bacterias    |(1,1)  |(1,2)  |(2,2)  |(2,1)  |
-      |antibioticos |(1,50) |(2,49) |(1,49) |(2,50) |
-      |antibioticos |(50,50)|(50,49)|(49,49)|(49,50)|
-      |antibioticos |(50,1) |(50,2) |(49,2) |(49,1) |
-      |antibioticos |(1,1)  |(1,2)  |(2,2)  |(2,1)  |
-      |bacteriofagos|(1,50) |(2,49) |(1,49) |(2,50) |
-      |bacteriofagos|(50,50)|(50,49)|(49,49)|(49,50)|
-      |bacteriofagos|(50,1) |(50,2) |(49,2) |(49,1) |
+      |bacterias    |(1,5)  |(2,4)  |(1,4)  |(2,5)  |
+      |bacterias    |(5,5)  |(5,4)  |(4,4)  |(4,5)  |
+      |bacterias    |(3,3)  |(3,4)  |(2,4)  |(2,3)  |
+      |bacterias    |(1,0)  |(1,1)  |(2,1)  |(2,0)  |
+      |antibioticos |(1,3)  |(2,2)  |(1,2)  |(2,3)  |
+      |antibioticos |(4,4)  |(4,3)  |(3,3)  |(3,4)  |
+      |antibioticos |(2,0)  |(2,1)  |(1,1)  |(1,0)  |
+      |antibioticos |(4,1)  |(4,2)  |(5,2)  |(5,1)  |
+      |bacteriofagos|(1,5)  |(2,4)  |(1,4)  |(2,5)  |
+      |bacteriofagos|(3,3)  |(3,2)  |(2,2)  |(2,3)  |
+      |bacteriofagos|(5,1)  |(0,2)  |(4,2)  |(4,1)  |
       |bacteriofagos|(1,1)  |(1,2)  |(2,2)  |(2,1)  |
 
 #4
