@@ -14,8 +14,8 @@ Escenario: Los antibioticos desaparecen al tener contacto con cualquier tipo de 
     Ejemplos:
     |apos  |bpos  |tipo  |crash |
     |(2,2) |(2,4) |debil |(2,3) |
-    |(1,32)|(2,34)|normal|(1,33)|
-    |(22,1)|(23,3)|fuerte|(22,2)|
+    |(1,3) |(2,5) |normal|(1,4) |
+    |(4,1) |(5,3) |fuerte|(4,2) |
 
 #10
 Escenario: Una bacteria que no sea fuerte muere al encontrarse con un antibiótico
@@ -29,7 +29,8 @@ Escenario: Una bacteria que no sea fuerte muere al encontrarse con un antibióti
     Ejemplos:
     |apos  |bpos  |tipo  |crash |
     |(3,2) |(3,4) |debil |(3,3) |
-    |(1,32)|(2,34)|normal|(1,33)|
+    |(1,3) |(2,4) |normal|(1,3) |
+
   
 #11
 
@@ -44,11 +45,11 @@ Escenario: Una bacteria fuerte se debilita al tener contacto con un antibiotico
     Ejemplos:
     |apos   |bpos   |crash  |
     |(3,2)  |(3,4)  |(3,3)  |
-    |(1,32) |(2,34) |(1,33) |
-    |(12,12)|(12,14)|(12,13)|
-    |(34,8) |(35,8) |(35,7) |
-    |(22,8) |(23,9) |(22,9) |
-
+    |(1,0)  |(2,2)  |(1,1)  |
+    |(3,3)  |(3,5)  |(3,4)  |
+    |(4,5)  |(5,5)  |(5,4)  |
+    |(0,2)  |(1,3)  |(0,3)  |
+    |(3,1)  |(4,2)  |(3,2)  |   
 
 #12
 Escenario: El numero de antibioticos es menor o igual al numero de bacterias en una celda
@@ -66,11 +67,10 @@ Escenario: El numero de antibioticos es menor o igual al numero de bacterias en 
     Ejemplos:
     |apos   |bpos   |crash  |
     |(3,2)  |(3,4)  |(3,3)  |
-    |(1,32) |(2,34) |(1,33) |
-    |(12,12)|(12,14)|(12,13)|
-    |(34,8) |(35,8) |(35,7) |
-    |(22,8) |(23,9) |(22,9) |
-
+    |(1,1)  |(2,3)  |(1,1)  |
+    |(2,2)  |(2,4)  |(2,3)  |
+    |(0,4)  |(1,4)  |(1,3)  |
+    |(4,3)  |(5,4)  |(4,4)  |
 
 #13
 Escenario: Las bacterias mueren cuando hay mas antibioticos que bacterias en la misma celda
@@ -94,8 +94,9 @@ Escenario: Las bacterias mueren cuando hay mas antibioticos que bacterias en la 
     Ejemplos:
     |apos  |apos2 |apos3 |apos4 |bpos  |bpos2 |bpos3 |crash |
     |(3,1) |(3,3) |(4,2) |(2,2) |(2,3) |(2,3) |(2,1) |(3,2) |
-    |(3,10)|(3,12)|(4,11)|(2,11)|(2,10)|(2,12)|(2,12)|(3,11)|
-    |(25,7)|(25,9)|(26,8)|(24,8)|(24,7)|(26,9)|(24,7)|(25,8)|
+    |(2,3) |(2,5) |(3,4) |(1,4) |(1,3) |(1,5) |(1,5) |(2,4) |
+    |(4,2) |(4,4) |(5,3) |(3,3) |(3,2) |(5,4) |(3,2) |(4,3) |
+
 
 
 #14
@@ -120,11 +121,11 @@ Escenario: Una bacteria se cruza con un bacteriófago
     Ejemplos:
     |bfpos  |bpos   |crash  |poder|grado|tipo  |
     |(3,2)  |(3,4)  |(3,3)  |4    |3    |normal|
-    |(1,32) |(2,34) |(1,33) |3    |2    |normal|
-    |(12,12)|(12,14)|(12,13)|2    |1    |normal|
-    |(34,8) |(35,8) |(35,7) |4    |3    |fuerte|
-    |(22,8) |(23,9) |(22,9) |3    |2    |fuerte|
-    |(20,1) |(22,1) |(21,1) |2    |1    |fuerte|
+    |(1,2)  |(2,4)  |(1,3)  |3    |2    |normal|
+    |(0,0)  |(0,2)  |(0,1)  |2    |1    |normal|
+    |(4,3)  |(5,3)  |(5,2)  |4    |3    |fuerte|
+    |(2,4)  |(3,5)  |(2,5)  |3    |2    |fuerte|
+    |(3,1)  |(5,1)  |(3,1)  |2    |1    |fuerte|
 
 
 #23
@@ -138,8 +139,8 @@ Escenario: Una bacteria infectada no le ocurre nada cuando se cruza con un bacte
     Ejemplos:
     |bfpos  |bpos   |crash  |poder|poderDec|grado|gradoInc|
     |(3,2)  |(3,4)  |(3,3)  |4    |3        |1    |2       |
-    |(1,32) |(2,34) |(1,33) |3    |2        |2    |3       |
-    |(12,12)|(12,14)|(12,13)|2    |1        |2    |3       |
+    |(1,0)  |(2,2)  |(1,1)  |3    |2        |2    |3       |
+    |(2,3)  |(2,5)  |(2,4)  |2    |1        |2    |3       |
 
 #24
 Escenario: Una bacteria es infectada por dos bacteriófagos                                    
