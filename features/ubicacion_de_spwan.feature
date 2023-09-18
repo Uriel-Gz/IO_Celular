@@ -1,5 +1,5 @@
 # language: es
-
+   
 Característica: Se ubican los spawns de las entidades
 
 Esquema del Escenario: Se ubica un spawn
